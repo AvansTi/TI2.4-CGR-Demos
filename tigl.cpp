@@ -168,10 +168,10 @@ layout (location = 1) in vec3 a_color;
 layout (location = 2) in vec2 a_texcoord;
 layout (location = 3) in vec3 a_normal;
 
-uniform mat4 modelMatrix;
-uniform mat4 viewMatrix;
-uniform mat4 projectionMatrix;
-uniform mat3 normalMatrix;
+uniform mat4 modelMatrix = mat4(1.0);
+uniform mat4 viewMatrix = mat4(1.0);
+uniform mat4 projectionMatrix = mat4(1.0);
+uniform mat3 normalMatrix = mat3(1.0);
 
 out vec3 color;
 out vec2 texCoord;

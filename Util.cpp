@@ -76,6 +76,23 @@ std::vector<Vertex> Util::buildSphere(const glm::vec3& p, const glm::vec3& s, co
 	return verts;
 }
 
+
+std::vector<Vertex> Util::buildDemoBlockScene()
+{
+	std::vector<Vertex> verts;
+	for (int x = -50; x <= 50; x += 2)
+	{
+		for (int y = -50; y <= 50; y += 2)
+		{
+
+			auto cube = Util::buildCube(glm::vec3(x, 0, y), glm::vec3(0.5, 0.5, 0.5), glm::vec4(1, 1, 1, 1));
+			verts.insert(verts.end(), cube.begin(), cube.end());
+		}
+	}
+	return verts;
+}
+
+
 void Util::drawAxis()
 {
 

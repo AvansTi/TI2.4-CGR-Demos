@@ -54,6 +54,15 @@
     <ClCompile Include="Util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MVPDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DemoApp.h">
@@ -73,6 +82,15 @@
     </ClInclude>
     <ClInclude Include="Util.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MVPDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthDemo.h">
+      <Filter>demos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

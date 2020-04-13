@@ -24,5 +24,8 @@ private:
 	Demo* activeDemo;
 
 	Demo* projectionDemo;
+	Demo* mvpDemo;
+	Demo* colorDemo;
+	Demo* depthDemo;
 };
 

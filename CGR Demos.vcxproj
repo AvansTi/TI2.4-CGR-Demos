@@ -159,7 +159,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ColorDemo.cpp" />
     <ClCompile Include="Demo.cpp" />
+    <ClCompile Include="DepthDemo.cpp" />
     <ClCompile Include="lib\imgui\examples\imgui_impl_glfw.cpp" />
     <ClCompile Include="lib\imgui\examples\imgui_impl_opengl3.cpp" />
     <ClCompile Include="lib\imgui\imgui.cpp" />
@@ -167,14 +169,18 @@
     <ClCompile Include="lib\imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DemoApp.cpp" />
+    <ClCompile Include="MVPDemo.cpp" />
     <ClCompile Include="ProjectionDemo.cpp" />
     <ClCompile Include="tigl.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ColorDemo.h" />
     <ClInclude Include="Demo.h" />
     <ClInclude Include="DemoApp.h" />
+    <ClInclude Include="DepthDemo.h" />
     <ClInclude Include="lib\imgui\imgui.h" />
+    <ClInclude Include="MVPDemo.h" />
     <ClInclude Include="ProjectionDemo.h" />
     <ClInclude Include="tigl.h" />
     <ClInclude Include="Util.h" />

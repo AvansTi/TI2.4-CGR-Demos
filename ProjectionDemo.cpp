@@ -9,16 +9,7 @@
 
 ProjectionDemo::ProjectionDemo() : cam1(25.0f), cam2(10.0f)
 {
-	for (int x = -50; x <= 50; x+=2)
-	{
-		for (int y = -50; y <= 50; y+=2)
-		{
-
-			auto cube = Util::buildCube(glm::vec3(x, 0, y), glm::vec3(0.5, 0.5, 0.5), glm::vec4(1, 1, 1, 1));
-			verts.insert(verts.end(), cube.begin(), cube.end());
-		}
-	}
-
+	verts = Util::buildDemoBlockScene();
 	cam1.angleX = 45;
 	cam1.angleZ = 45;
 

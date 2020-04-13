@@ -10,6 +10,9 @@
 #include "examples/imgui_impl_opengl3.h"
 
 #include "ProjectionDemo.h"
+#include "MVPDemo.h"
+#include "ColorDemo.h"
+#include "DepthDemo.h"
 
 
 DemoApp::DemoApp()
@@ -58,14 +61,15 @@ void DemoApp::run()
 		{
 			ImGui::SetNextWindowPos(ImVec2(0, 0));
 			ImGui::Begin("Demo Selection");
-			ImGui::SetWindowFontScale(1.75f);
 
 			if (ImGui::Button("Projection"))
 				activeDemo = projectionDemo;
-			if (ImGui::Button("Projection"))
-				activeDemo = projectionDemo;
-			if (ImGui::Button("Projection"))
-				activeDemo = projectionDemo;
+			if (ImGui::Button("Model View Projection"))
+				activeDemo = mvpDemo;
+			if (ImGui::Button("Color"))
+				activeDemo = colorDemo;
+			if (ImGui::Button("Depth"))
+				activeDemo = depthDemo;
 
 			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 			ImGui::End();
@@ -93,6 +97,9 @@ void DemoApp::init()
 
 
 	projectionDemo = new ProjectionDemo();
+	mvpDemo = new MVPDemo();
+	colorDemo = new ColorDemo();
+	depthDemo = new DepthDemo();
 
 
 	activeDemo = projectionDemo;

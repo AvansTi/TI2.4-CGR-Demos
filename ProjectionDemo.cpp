@@ -123,8 +123,8 @@ void ProjectionDemo::draw()
 			ImGui::BeginGroup();
 			ImGui::SliderFloat("Left/Right", &lr, 0.0f, 100.0f);
 			ImGui::SliderFloat("Up/Down", &ud, 0.0f, 100.0f);
-			ImGui::SliderFloat("Near plane", &near, 0.0f, 100.0f);
-			ImGui::SliderFloat("Far plane", &far, 0.0f, 100.0f);
+			ImGui::SliderFloat("Near plane", &near, -100.0f, 100.0f);
+			ImGui::SliderFloat("Far plane", &far, -100.0f, 100.0f);
 			ImGui::EndGroup();
 		}
 

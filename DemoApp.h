@@ -27,5 +27,8 @@ private:
 	Demo* mvpDemo;
 	Demo* colorDemo;
 	Demo* depthDemo;
+	Demo* textureDemo;
+	Demo* cameraDemo;
+	Demo* modelDemo;
 };
 

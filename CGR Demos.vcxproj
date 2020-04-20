@@ -159,6 +159,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CameraDemo.cpp" />
     <ClCompile Include="ColorDemo.cpp" />
     <ClCompile Include="Demo.cpp" />
     <ClCompile Include="DepthDemo.cpp" />
@@ -169,8 +170,13 @@
     <ClCompile Include="lib\imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DemoApp.cpp" />
+    <ClCompile Include="ModelDemo.cpp" />
     <ClCompile Include="MVPDemo.cpp" />
+    <ClCompile Include="ObjModel.cpp" />
     <ClCompile Include="ProjectionDemo.cpp" />
+    <ClInclude Include="CameraDemo.h" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureDemo.cpp" />
     <ClCompile Include="tigl.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
@@ -180,8 +186,11 @@
     <ClInclude Include="DemoApp.h" />
     <ClInclude Include="DepthDemo.h" />
     <ClInclude Include="lib\imgui\imgui.h" />
+    <ClInclude Include="ModelDemo.h" />
     <ClInclude Include="MVPDemo.h" />
+    <ClInclude Include="ObjModel.h" />
     <ClInclude Include="ProjectionDemo.h" />
+    <ClInclude Include="TextureDemo.h" />
     <ClInclude Include="tigl.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>

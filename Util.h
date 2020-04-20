@@ -4,6 +4,7 @@
 #include "tigl.h"
 
 using tigl::Vertex;
+struct GLFWwindow;
 
 class Util
 {
@@ -30,3 +31,20 @@ public:
 	float angleX = 0;
 	float angleZ = 0;
 };
+
+
+class FpsCam
+{
+public:
+	glm::mat4 getMatrix();
+	void update(GLFWwindow*);
+
+private:
+	glm::vec3 position = glm::vec3(0, 0, 0);
+	glm::vec2 rotation = glm::vec2(0, 0);
+
+	void move(float angle, float fac);
+	bool enabled = false;
+};
+
+

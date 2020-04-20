@@ -69,8 +69,8 @@ void DepthDemo::update(GLFWwindow* window)
 
 	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1) && !ImGui::GetIO().WantCaptureMouse)
 	{
-		double dx = mouseX - lastX;
-		double dy = mouseY - lastY;
+		float dx = (float)(mouseX - lastX);
+		float dy = (float)(mouseY - lastY);
 
 		cam.angleX += dy;
 		cam.angleZ += dx;

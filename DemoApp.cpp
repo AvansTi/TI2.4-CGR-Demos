@@ -13,6 +13,9 @@
 #include "MVPDemo.h"
 #include "ColorDemo.h"
 #include "DepthDemo.h"
+#include "TextureDemo.h"
+#include "CameraDemo.h"
+#include "ModelDemo.h"
 
 
 DemoApp::DemoApp()
@@ -70,6 +73,12 @@ void DemoApp::run()
 				activeDemo = colorDemo;
 			if (ImGui::Button("Depth"))
 				activeDemo = depthDemo;
+			if (ImGui::Button("Texture"))
+				activeDemo = textureDemo;
+			if (ImGui::Button("Camera"))
+				activeDemo = cameraDemo;
+			if (ImGui::Button("Model"))
+				activeDemo = modelDemo;
 
 			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 			ImGui::End();
@@ -100,6 +109,9 @@ void DemoApp::init()
 	mvpDemo = new MVPDemo();
 	colorDemo = new ColorDemo();
 	depthDemo = new DepthDemo();
+	textureDemo = new TextureDemo();
+	cameraDemo = new CameraDemo();
+	modelDemo = new ModelDemo();
 
 
 	activeDemo = projectionDemo;

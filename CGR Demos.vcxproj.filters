@@ -63,6 +63,21 @@
     <ClCompile Include="DepthDemo.cpp">
       <Filter>demos</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjModel.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DemoApp.h">
@@ -91,6 +106,18 @@
     </ClInclude>
     <ClInclude Include="DepthDemo.h">
       <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjModel.h">
+      <Filter>lib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

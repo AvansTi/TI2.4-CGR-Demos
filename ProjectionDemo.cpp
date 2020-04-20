@@ -187,13 +187,13 @@ void ProjectionDemo::update(GLFWwindow* window)
 
 		if (dragScreen == 1)
 		{
-			cam1.angleX += dy;
-			cam1.angleZ += dx;
+			cam1.angleX += (float)dy;
+			cam1.angleZ += (float)dx;
 		}
 		else
 		{
-			cam2.angleX += dy;
-			cam2.angleZ += dx;
+			cam2.angleX += (float)dy;
+			cam2.angleZ += (float)dx;
 		}
 	}
 	else

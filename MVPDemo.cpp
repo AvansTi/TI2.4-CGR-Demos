@@ -9,7 +9,7 @@ MVPDemo::MVPDemo()
 
 	ratio = 1;
 	fov = 70;
-	near = 0.01;
+	near = 0.01f;
 	far = 100;
 
 	eye = glm::vec3(0, 5, 5);

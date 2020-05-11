@@ -12,7 +12,7 @@ public:
 	static std::vector<Vertex> buildCube(const glm::vec3& p, const glm::vec3& s, const glm::vec4 &color);
 	static std::vector<Vertex> buildSphere(const glm::vec3& p, const glm::vec3& s, const glm::vec4& color);
 
-	static std::vector<Vertex> buildDemoBlockScene();
+	static std::vector<Vertex> buildDemoBlockScene(int count = 50);
 
 	static void drawAxis();
 

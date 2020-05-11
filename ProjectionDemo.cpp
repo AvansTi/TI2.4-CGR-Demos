@@ -7,7 +7,9 @@
 #include "Util.h"
 #include <GLFW/glfw3.h>
 
-ProjectionDemo::ProjectionDemo() : cam1(25.0f), cam2(10.0f)
+ProjectionDemo projectionDemo;
+
+ProjectionDemo::ProjectionDemo() : Demo("Projection"), cam1(25.0f), cam2(10.0f)
 {
 	verts = Util::buildDemoBlockScene();
 	cam1.angleX = 45;

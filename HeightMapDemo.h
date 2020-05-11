@@ -1,22 +1,27 @@
 #pragma once
-
-#include <GL/glew.h>
 #include "Demo.h"
-#include <glm/glm.hpp>
-#include "Util.h"
-class ObjModel;
 
-class ModelDemo : public Demo
+#include "tigl.h"
+#include "Util.h"
+using tigl::Vertex;
+
+
+class HeightMapDemo : public Demo
 {
-	ObjModel* model;
+	std::vector<Vertex> verts;
+	tigl::VBO* vbo;
+
 	OrbitCam cam;
+
 	double lastX, lastY;
+
+	bool useVbo = true;
+
 public:
-	ModelDemo();
+	HeightMapDemo();
+
 	virtual void init() override;
 	virtual void draw() override;
 	virtual void update(GLFWwindow* window) override;
-
-
 };
 

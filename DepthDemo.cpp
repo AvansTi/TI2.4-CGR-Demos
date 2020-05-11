@@ -6,8 +6,9 @@
 #include "Util.h"
 #include <GLFW/glfw3.h>
 
+DepthDemo depthDemo;
 
-DepthDemo::DepthDemo() : cam(20)
+DepthDemo::DepthDemo() : Demo("Depth"), cam(20)
 {
 	verts = Util::buildDemoBlockScene();
 
@@ -23,6 +24,8 @@ void DepthDemo::draw()
 
 	tigl::shader->enableColor(true);
 	tigl::shader->enableLighting(true);
+	tigl::shader->enableColorMult(false);
+	tigl::shader->enableTexture(false);
 	tigl::shader->setLightCount(1);
 	tigl::shader->setLightDirectional(0, true);
 	tigl::shader->setLightPosition(0, glm::vec3(10, 10, 10));

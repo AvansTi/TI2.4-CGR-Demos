@@ -6,6 +6,13 @@ using tigl::Vertex;
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+ColorDemo colorDemo;
+
+ColorDemo::ColorDemo() : Demo("Color")
+{
+
+}
+
 void ColorDemo::draw()
 {
 	int viewport[4];

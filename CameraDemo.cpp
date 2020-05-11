@@ -3,7 +3,9 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "imgui.h"
 
-CameraDemo::CameraDemo()
+CameraDemo cameraDemo;
+
+CameraDemo::CameraDemo() : Demo("Camera")
 {
 	verts = Util::buildDemoBlockScene();
 }

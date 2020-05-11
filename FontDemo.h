@@ -1,22 +1,23 @@
 #pragma once
 
-#include <GL/glew.h>
 #include "Demo.h"
 #include <glm/glm.hpp>
 #include "Util.h"
-class ObjModel;
+#include "tigl.h"
+using tigl::Vertex;
+#include "stb_truetype.h"
 
-class ModelDemo : public Demo
+class FontDemo : public Demo
 {
-	ObjModel* model;
-	OrbitCam cam;
-	double lastX, lastY;
 public:
-	ModelDemo();
+	stbtt_bakedchar cdata[96];
+	GLuint texId;
+
+	std::string text = "Hello world";
+
+	FontDemo();
 	virtual void init() override;
 	virtual void draw() override;
 	virtual void update(GLFWwindow* window) override;
 
-
 };
-

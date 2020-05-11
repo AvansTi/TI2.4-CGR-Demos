@@ -10,11 +10,16 @@ using tigl::Vertex;
 
 #include "ObjModel.h"
 
-ModelDemo::ModelDemo() : cam(50.0f)
+ModelDemo modelDemo;
+
+ModelDemo::ModelDemo() : Demo("Model"), cam(50.0f)
+{
+}
+
+void ModelDemo::init()
 {
 	model = new ObjModel("models/car/honda_jazz.obj");
 }
-
 
 void ModelDemo::draw()
 {

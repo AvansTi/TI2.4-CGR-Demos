@@ -11,7 +11,7 @@ class ColorDemo : public Demo
 
 
 public:
-
+	ColorDemo();
 
 	virtual void draw() override;
 	virtual void update(GLFWwindow* window) override;

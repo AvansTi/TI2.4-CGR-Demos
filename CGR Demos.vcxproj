@@ -105,7 +105,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)lib\glm;$(SolutionDir)lib\glew-2.1.0\include;$(SolutionDir)lib\glfw-3.3.2\include;$(SolutionDir)lib\AntTweakBar\include;$(SolutionDir)lib\imgui;$(SolutionDir)\imgui\examples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -145,7 +145,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)lib\glm;$(SolutionDir)lib\glew-2.1.0\include;$(SolutionDir)lib\glfw-3.3.2\include;$(SolutionDir)lib\AntTweakBar\include;$(SolutionDir)lib\imgui;$(SolutionDir)\imgui\examples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -163,18 +163,24 @@
     <ClCompile Include="ColorDemo.cpp" />
     <ClCompile Include="Demo.cpp" />
     <ClCompile Include="DepthDemo.cpp" />
+    <ClCompile Include="FogDemo.cpp" />
+    <ClCompile Include="FontDemo.cpp" />
+    <ClCompile Include="HeightMapDemo.cpp" />
     <ClCompile Include="lib\imgui\examples\imgui_impl_glfw.cpp" />
     <ClCompile Include="lib\imgui\examples\imgui_impl_opengl3.cpp" />
     <ClCompile Include="lib\imgui\imgui.cpp" />
     <ClCompile Include="lib\imgui\imgui_draw.cpp" />
     <ClCompile Include="lib\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="lib\imgui\misc\cpp\imgui_stdlib.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DemoApp.cpp" />
     <ClCompile Include="ModelDemo.cpp" />
     <ClCompile Include="MVPDemo.cpp" />
+    <ClCompile Include="NormalDemo.cpp" />
     <ClCompile Include="ObjModel.cpp" />
     <ClCompile Include="ProjectionDemo.cpp" />
     <ClInclude Include="CameraDemo.h" />
+    <ClCompile Include="stb_truetype.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureDemo.cpp" />
     <ClCompile Include="tigl.cpp" />
@@ -185,11 +191,17 @@
     <ClInclude Include="Demo.h" />
     <ClInclude Include="DemoApp.h" />
     <ClInclude Include="DepthDemo.h" />
+    <ClInclude Include="FogDemo.h" />
+    <ClInclude Include="FontDemo.h" />
+    <ClInclude Include="HeightMapDemo.h" />
     <ClInclude Include="lib\imgui\imgui.h" />
+    <ClInclude Include="lib\imgui\misc\cpp\imgui_stdlib.h" />
     <ClInclude Include="ModelDemo.h" />
     <ClInclude Include="MVPDemo.h" />
+    <ClInclude Include="NormalDemo.h" />
     <ClInclude Include="ObjModel.h" />
     <ClInclude Include="ProjectionDemo.h" />
+    <ClInclude Include="stb_truetype.h" />
     <ClInclude Include="TextureDemo.h" />
     <ClInclude Include="tigl.h" />
     <ClInclude Include="Util.h" />

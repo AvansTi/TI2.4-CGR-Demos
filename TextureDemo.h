@@ -29,6 +29,7 @@ class TextureDemo : public Demo
 
 public:
 	TextureDemo();
+	virtual void init() override;
 	virtual void draw() override;
 	virtual void update(GLFWwindow* window) override;
 

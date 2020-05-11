@@ -78,6 +78,24 @@
     <ClCompile Include="ObjModel.cpp">
       <Filter>lib</Filter>
     </ClCompile>
+    <ClCompile Include="NormalDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="FontDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_truetype.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\misc\cpp\imgui_stdlib.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="HeightMapDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
+    <ClCompile Include="FogDemo.cpp">
+      <Filter>demos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DemoApp.h">
@@ -118,6 +136,24 @@
     </ClInclude>
     <ClInclude Include="ObjModel.h">
       <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="FontDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_truetype.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\misc\cpp\imgui_stdlib.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="HeightMapDemo.h">
+      <Filter>demos</Filter>
+    </ClInclude>
+    <ClInclude Include="FogDemo.h">
+      <Filter>demos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

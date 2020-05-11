@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <vector>
+#include <list>
 
 #include "tigl.h"
 using tigl::Vertex;
@@ -22,13 +23,7 @@ private:
 
 
 	Demo* activeDemo;
+	std::list<Demo*> demos;
 
-	Demo* projectionDemo;
-	Demo* mvpDemo;
-	Demo* colorDemo;
-	Demo* depthDemo;
-	Demo* textureDemo;
-	Demo* cameraDemo;
-	Demo* modelDemo;
 };
 

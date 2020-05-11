@@ -16,6 +16,22 @@
 #include "TextureDemo.h"
 #include "CameraDemo.h"
 #include "ModelDemo.h"
+#include "NormalDemo.h"
+
+#if defined(WIN32) || defined(_WIN64)
+//void GLAPIENTRY onDebug(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam);
+void GLAPIENTRY onDebug(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
+#else
+void onDebug(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, GLvoid* userParam)
+#endif
+{
+
+	if (type == 33361) //VBO setdata
+		return;
+	if (type == 33357) //deprication warning
+		return;
+	printf("%s\n", message);
+}
 
 
 DemoApp::DemoApp()
@@ -31,7 +47,15 @@ DemoApp::DemoApp()
     glfwMakeContextCurrent(window);
 
     tigl::init();
-	
+
+	glfwSwapInterval(1);
+	if (GLEW_ARB_debug_output)
+	{
+		glDebugMessageCallback(&onDebug, NULL);
+		glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB);
+		glEnable(GL_DEBUG_OUTPUT);
+	}
+
 
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
@@ -63,24 +87,20 @@ void DemoApp::run()
 
 		{
 			ImGui::SetNextWindowPos(ImVec2(0, 0));
+			ImGui::SetNextWindowSize(ImVec2(0, 400));
 			ImGui::Begin("Demo Selection");
-
-			if (ImGui::Button("Projection"))
-				activeDemo = projectionDemo;
-			if (ImGui::Button("Model View Projection"))
-				activeDemo = mvpDemo;
-			if (ImGui::Button("Color"))
-				activeDemo = colorDemo;
-			if (ImGui::Button("Depth"))
-				activeDemo = depthDemo;
-			if (ImGui::Button("Texture"))
-				activeDemo = textureDemo;
-			if (ImGui::Button("Camera"))
-				activeDemo = cameraDemo;
-			if (ImGui::Button("Model"))
-				activeDemo = modelDemo;
-
+			for (auto demo : demos)
+			{
+				if (ImGui::Button(demo->name.c_str()))
+					activeDemo = demo;
+			}
 			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+			
+			static bool vsync = true;
+			if (ImGui::Checkbox("Use vsync", &vsync))
+			{
+				glfwSwapInterval(vsync ? 1 : 0);
+			}
 			ImGui::End();
 		}
 
@@ -95,26 +115,22 @@ void DemoApp::run()
 	glfwTerminate();
 }
 
-
+GLFWkeyfun oldCallback;
 void DemoApp::init()
 {
-	glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+	oldCallback = glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
-		if(key == GLFW_KEY_ESCAPE)
-			glfwSetWindowShouldClose(window, true);
+			if (key == GLFW_KEY_ESCAPE)
+				glfwSetWindowShouldClose(window, true);
+			else
+				oldCallback(window, key, scancode, action, mods);
 	});
 
 
-	projectionDemo = new ProjectionDemo();
-	mvpDemo = new MVPDemo();
-	colorDemo = new ColorDemo();
-	depthDemo = new DepthDemo();
-	textureDemo = new TextureDemo();
-	cameraDemo = new CameraDemo();
-	modelDemo = new ModelDemo();
-
-
-	activeDemo = projectionDemo;
+	demos = Demo::getDemos();
+	for (auto demo : demos)
+		demo->init();
+	activeDemo = demos.front();
 
 }
 

@@ -3,7 +3,9 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "imgui.h"
 
-MVPDemo::MVPDemo()
+MVPDemo mvpDemo;
+
+MVPDemo::MVPDemo() : Demo("MVP Matrix")
 {
 	verts = Util::buildDemoBlockScene();
 

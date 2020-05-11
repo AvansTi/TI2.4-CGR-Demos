@@ -7,13 +7,16 @@ using tigl::Vertex;
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+TextureDemo textureDemo;
 
+TextureDemo::TextureDemo() : Demo("Texture")
+{
+}
 
-TextureDemo::TextureDemo()
+void TextureDemo::init()
 {
 	texture = new Texture("demo.png");
 }
-
 
 void TextureDemo::draw()
 {
@@ -39,7 +42,7 @@ void TextureDemo::draw()
 	tigl::shader->enableTexture(true);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, repeatMode);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, repeatMode);
-
+	texture->bind();
 
 	tigl::begin(GL_QUADS);
 	tigl::addVertex(Vertex::PTC(p1, t1, c1));
@@ -47,6 +50,7 @@ void TextureDemo::draw()
 	tigl::addVertex(Vertex::PTC(p3, t3, c3));
 	tigl::addVertex(Vertex::PTC(p4, t4, c4));
 	tigl::end();
+	tigl::shader->enableTexture(false);
 
 	{
 		ImGui::SetNextWindowPos(ImVec2(ImGui::GetIO().DisplaySize.x - 500, 0));

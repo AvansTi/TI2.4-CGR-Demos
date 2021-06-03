@@ -5,7 +5,7 @@
 
 NormalDemo normalDemo;
 
-NormalDemo::NormalDemo() : Demo("Normal"), cam(4)
+NormalDemo::NormalDemo() : Demo("2.1 Normal"), cam(4)
 {
 	cube = Util::buildDemoBlockScene(5);//Util::buildCube(glm::vec3(0, 0, 0), glm::vec3(1, 1, 1), glm::vec4(1, 1, 1, 1));
 	cam.angleX = 1;

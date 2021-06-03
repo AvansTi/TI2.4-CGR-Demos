@@ -12,7 +12,7 @@ using tigl::Vertex;
 
 ModelDemo modelDemo;
 
-ModelDemo::ModelDemo() : Demo("Model"), cam(50.0f)
+ModelDemo::ModelDemo() : Demo("2.1 Model"), cam(50.0f)
 {
 }
 
@@ -35,8 +35,13 @@ void ModelDemo::draw()
 	tigl::shader->setModelMatrix(glm::mat4(1.0f));
 
 	tigl::shader->enableColor(false);
-	tigl::shader->enableLighting(false);
+	tigl::shader->enableLighting(lightingEnabled);
 	tigl::shader->enableColorMult(false);
+	tigl::shader->setLightCount(1);
+	tigl::shader->setLightAmbient(0, lightAmbient);
+	tigl::shader->setLightDiffuse(0, lightDiffuse);
+	tigl::shader->setLightSpecular(0, lightSpecular);
+	tigl::shader->setShinyness(shinyness);
 	tigl::shader->enableFog(false);
 
 	glEnable(GL_DEPTH_TEST);
@@ -50,29 +55,14 @@ void ModelDemo::draw()
 		ImGui::Begin("Model Demo");
 		ImGui::SetWindowFontScale(1.5f);
 
-		/*bool open = ImGui::BeginCombo("Repeat Mode", repeatMode == GL_REPEAT ? "GL_REPEAT" : (repeatMode == GL_MIRRORED_REPEAT ? "GL_MIRRORED_REPEAT" : "GL_CLAMP"), false);
-		if (open)
-		{
-			bool selected = repeatMode == GL_REPEAT;
-			if (ImGui::Selectable("GL_REPEAT", selected))
-				repeatMode = GL_REPEAT;
-			if (selected)
-				ImGui::SetItemDefaultFocus();
+		ImGui::Checkbox("Lighting", &lightingEnabled);
 
-			selected = repeatMode == GL_MIRRORED_REPEAT;
-			if (ImGui::Selectable("GL_MIRRORED_REPEAT", selected))
-				repeatMode = GL_MIRRORED_REPEAT;
-			if (selected)
-				ImGui::SetItemDefaultFocus();
+		ImGui::ColorEdit3("Ambient", glm::value_ptr(lightAmbient));
+		ImGui::ColorEdit3("Diffuse", glm::value_ptr(lightDiffuse));
+		ImGui::ColorEdit3("Specular", glm::value_ptr(lightSpecular));
+		ImGui::SliderFloat("Shinyness", &shinyness, 0, 100);
 
 
-			selected = repeatMode == GL_CLAMP;
-			if (ImGui::Selectable("GL_CLAMP", selected))
-				repeatMode = GL_CLAMP;
-			if (selected)
-				ImGui::SetItemDefaultFocus();
-			ImGui::EndCombo();
-		}*/
 
 
 	}

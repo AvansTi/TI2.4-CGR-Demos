@@ -133,6 +133,8 @@ namespace tigl
 
 	class VBO
 	{
+	public:
+		~VBO();
 	private:
 		GLuint id;
 		unsigned int size;

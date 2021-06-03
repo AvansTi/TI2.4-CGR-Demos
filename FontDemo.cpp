@@ -6,7 +6,7 @@
 
 FontDemo fontDemo;
 
-FontDemo::FontDemo() : Demo("Font")
+FontDemo::FontDemo() : Demo("2.1 Font")
 {
 }
 
@@ -44,7 +44,7 @@ void FontDemo::draw()
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glDisable(GL_DEPTH_TEST);
 	glBindTexture(GL_TEXTURE_2D, texId);
-
+	
 	float x = 400, y = 300;
 	stbtt_aligned_quad q;
 	tigl::begin(GL_QUADS);

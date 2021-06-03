@@ -9,7 +9,7 @@
 
 ProjectionDemo projectionDemo;
 
-ProjectionDemo::ProjectionDemo() : Demo("Projection"), cam1(25.0f), cam2(10.0f)
+ProjectionDemo::ProjectionDemo() : Demo("1.1 Projection"), cam1(25.0f), cam2(10.0f)
 {
 	verts = Util::buildDemoBlockScene();
 	cam1.angleX = 45;

@@ -10,7 +10,7 @@
 
 HeightMapDemo heightMapDemo;
 
-HeightMapDemo::HeightMapDemo() : Demo("HeightMap"), cam(20)
+HeightMapDemo::HeightMapDemo() : Demo("3.1 HeightMap"), cam(20)
 {
 
 }
@@ -114,6 +114,7 @@ void HeightMapDemo::draw()
 
 		ImGui::BeginGroup();
 		ImGui::SliderFloat("Camera Distance", &cam.distance, 0, 100);
+		ImGui::SliderFloat("Autorotate", &autorotation, 0, 1);
 		ImGui::Checkbox("Use VBO", &useVbo);
 		ImGui::EndGroup();
 
@@ -135,6 +136,10 @@ void HeightMapDemo::update(GLFWwindow* window)
 
 		cam.angleX += dy;
 		cam.angleZ += dx;
+	}
+	else
+	{
+		cam.angleZ += autorotation;
 	}
 
 

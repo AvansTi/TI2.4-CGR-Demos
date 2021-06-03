@@ -5,7 +5,7 @@
 
 MVPDemo mvpDemo;
 
-MVPDemo::MVPDemo() : Demo("MVP Matrix")
+MVPDemo::MVPDemo() : Demo("1.2 MVP Matrix")
 {
 	verts = Util::buildDemoBlockScene();
 

@@ -9,7 +9,7 @@ using tigl::Vertex;
 
 TextureDemo textureDemo;
 
-TextureDemo::TextureDemo() : Demo("Texture")
+TextureDemo::TextureDemo() : Demo("2.1 Texture")
 {
 }
 

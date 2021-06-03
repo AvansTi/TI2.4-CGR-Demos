@@ -8,7 +8,7 @@ using tigl::Vertex;
 
 ColorDemo colorDemo;
 
-ColorDemo::ColorDemo() : Demo("Color")
+ColorDemo::ColorDemo() : Demo("1.4 Color")
 {
 
 }

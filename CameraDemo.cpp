@@ -5,7 +5,7 @@
 
 CameraDemo cameraDemo;
 
-CameraDemo::CameraDemo() : Demo("Camera")
+CameraDemo::CameraDemo() : Demo("1.3 Camera")
 {
 	verts = Util::buildDemoBlockScene();
 }

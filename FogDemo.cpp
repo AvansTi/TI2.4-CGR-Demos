@@ -9,7 +9,7 @@
 
 FogDemo fogDemo;
 
-FogDemo::FogDemo() : Demo("Fog"), cam(20)
+FogDemo::FogDemo() : Demo("2.1 Fog"), cam(20)
 {
 	verts = Util::buildDemoBlockScene();
 
@@ -17,6 +17,7 @@ FogDemo::FogDemo() : Demo("Fog"), cam(20)
 
 void FogDemo::draw()
 {
+	glClearColor(fogColor.r, fogColor.g, fogColor.b, 1.0f);
 	int viewport[4];
 	glGetIntegerv(GL_VIEWPORT, viewport);
 	tigl::shader->setProjectionMatrix(glm::perspective(glm::radians(70.0f), viewport[2] / (float)viewport[3], near, far));

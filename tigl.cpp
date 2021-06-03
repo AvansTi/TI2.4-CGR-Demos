@@ -169,6 +169,11 @@ namespace tigl
 		vbo->size = (unsigned int)vertices.size();
 		return vbo;
 	}
+	VBO::~VBO()
+	{
+		glDeleteBuffers(1, &id);
+	}
+
 
 	void drawVertices(GLenum shape, VBO* vbo)
 	{
@@ -303,7 +308,8 @@ void main()
 		
 			vec3 reflectDir = reflect(-lightDir, normalize(normal));
 			float specularFactor = pow(max(dot(normalize(cameraPosition-position), reflectDir), 0.0), shinyness);
-			specular += specularFactor * lights[i].specular;
+			if(shinyness > 0)
+				specular += specularFactor * lights[i].specular;
 		}
 		
 		outputColor.rgb = (ambient + specular + diffuse) * outputColor.rgb;
@@ -504,6 +510,7 @@ void main()
 	{
 		return position == other.position && normal == other.normal && color == other.color && texcoord == other.texcoord;
 	}
+
 
 
 

@@ -8,7 +8,7 @@
 
 DepthDemo depthDemo;
 
-DepthDemo::DepthDemo() : Demo("Depth"), cam(20)
+DepthDemo::DepthDemo() : Demo("1.5 Depth"), cam(20)
 {
 	verts = Util::buildDemoBlockScene();
 

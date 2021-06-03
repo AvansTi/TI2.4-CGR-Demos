@@ -14,6 +14,7 @@ class HeightMapDemo : public Demo
 	OrbitCam cam;
 
 	double lastX, lastY;
+	float autorotation = 0;
 
 	bool useVbo = true;
 

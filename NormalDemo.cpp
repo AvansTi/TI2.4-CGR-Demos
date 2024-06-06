@@ -42,7 +42,7 @@ void NormalDemo::draw()
 		int count = 1;
 		for (auto& vv : cube)
 		{
-			if (vv != v && v.position == vv.position)
+			if (&vv != &v && v.position == vv.position)
 			{
 				normal += vv.normal;
 				count++;

@@ -48,7 +48,7 @@ DemoApp::DemoApp()
 
     tigl::init();
 
-	glfwSwapInterval(1);
+	glfwSwapInterval(0);
 	if (GLEW_ARB_debug_output)
 	{
 		glDebugMessageCallback(&onDebug, NULL);

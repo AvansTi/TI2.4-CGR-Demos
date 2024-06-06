@@ -3,6 +3,7 @@
 #include "imgui.h"
 #include "misc/cpp/imgui_stdlib.h"
 #include <GLFW/glfw3.h>
+#include <glm/gtc/type_ptr.hpp>
 
 FontDemo fontDemo;
 
@@ -19,6 +20,8 @@ void FontDemo::init()
 	stbtt_BakeFontBitmap(ttf_buffer, 0, 32.0, temp_bitmap, 512, 512, 32, 96, cdata); // no guarantee this fits!
 	glGenTextures(1, &texId);
 	glBindTexture(GL_TEXTURE_2D, texId);
+	GLint swizzleMask[] = { GL_ALPHA, GL_ALPHA, GL_ALPHA, GL_ALPHA };
+	glTexParameteriv(GL_TEXTURE_2D, GL_TEXTURE_SWIZZLE_RGBA, swizzleMask);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, 512, 512, 0, GL_ALPHA, GL_UNSIGNED_BYTE, temp_bitmap);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
@@ -38,7 +41,8 @@ void FontDemo::draw()
 	tigl::shader->enableColor(false);
 	tigl::shader->enableLighting(false);
 	tigl::shader->enableTexture(true);
-	tigl::shader->enableColorMult(false);
+	tigl::shader->enableColorMult(true);
+	tigl::shader->setColorMult(color);
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -58,7 +62,7 @@ void FontDemo::draw()
 		}
 	}
 	tigl::end();
-
+	tigl::shader->enableColorMult(false);
 
 
 	{
@@ -70,6 +74,7 @@ void FontDemo::draw()
 
 		ImGui::BeginGroup();
 		ImGui::InputText("##Text", &text);
+		ImGui::ColorEdit4("Color", glm::value_ptr(color));
 		ImGui::EndGroup();
 
 		ImGui::End();
